@@ -1,0 +1,19 @@
+.PHONY: lint lint-fix vet build test clean
+
+build:
+	go build ./...
+
+test:
+	go test ./...
+
+vet:
+	go vet ./...
+
+lint:
+	golangci-lint run ./...
+
+lint-fix:
+	golangci-lint run --fix ./...
+
+clean:
+	go clean ./...
